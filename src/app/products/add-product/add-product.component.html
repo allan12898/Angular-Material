@@ -1,0 +1,76 @@
+<div fxLayout="row" fxLayoutWrap="wrap">
+  <!-- column -->
+  <div fxFlex.gt-sm="100" fxFlex.gt-xs="100" fxFlex="100">
+
+
+
+    <mat-card>
+      <mat-card-title class="text-center">
+        New product
+      </mat-card-title>
+
+      <mat-card-content>
+
+
+        <form class="example-form">
+          <div fxLayout="row" fxLayoutWrap="wrap">
+            <div fxFlex="40">
+              <mat-form-field class="">
+                <input matInput placeholder="Name" value="">
+              </mat-form-field>
+              <mat-form-field class="example-full-width">
+                <textarea matInput placeholder="Description"></textarea>
+              </mat-form-field>
+
+              <mat-checkbox checked>Active</mat-checkbox>
+            </div>
+
+            <div fxFlex="25">
+              <mat-card>
+                <mat-card-title class="text-center">
+                  Category List
+                </mat-card-title>
+                <mat-selection-list #shoes>
+                  <mat-list-option *ngFor="let shoe of typesOfShoes">
+                    {{shoe}}
+                  </mat-list-option>
+                </mat-selection-list>
+              </mat-card>
+            </div>
+
+            <div fxFlex="10" fxLayout="column" fxLayoutAlign="space-around center">
+
+
+              <button mat-raised-button> Add>> </button>
+              <button mat-raised-button>
+                Remove </button> </div>
+
+            <div fxFlex="25">
+              <mat-card>
+                <mat-card-title class="text-center">
+                  Category in Product
+                </mat-card-title>
+                <mat-selection-list #shoes>
+                  <mat-list-option *ngFor="let shoe of typesOfShoes">
+                    {{shoe}}
+                  </mat-list-option>
+                </mat-selection-list>
+              </mat-card>
+            </div>
+          </div>
+        </form>
+
+
+        <div fxLayout="column" fxLayoutWrap="wrap" fxLayoutAlign="center end" >
+
+            <button mat-raised-button> Submit </button>
+
+      </div>  
+      </mat-card-content>
+
+    </mat-card>
+
+
+  </div>
+  <!-- column -->
+</div>

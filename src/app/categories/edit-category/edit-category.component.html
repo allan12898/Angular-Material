@@ -1,0 +1,86 @@
+<div fxLayout="row" fxLayoutWrap="wrap">
+  <!-- column -->
+  <div fxFlex.gt-sm="100" fxFlex.gt-xs="100" fxFlex="100" *ngIf="category">
+
+
+
+    <mat-card>
+      <mat-card-title class="text-center">
+        Edit category
+      </mat-card-title>
+
+      <mat-card-content>
+
+
+        <form [formGroup]="categoryForm" class="example-form">
+          <div fxLayout="row" fxLayoutWrap="wrap">
+            <div fxFlex="40">
+              <mat-form-field class="">
+                <input matInput placeholder="Name" formControlName="name">
+              </mat-form-field>
+              <mat-form-field class="example-full-width">
+                <textarea matInput placeholder="Description" formControlName="description"></textarea>
+              </mat-form-field>
+              <mat-checkbox formControlName="status">Active</mat-checkbox>
+
+
+
+            </div>
+
+            <div fxFlex="25">
+              <mat-card>
+                <mat-card-header class="bg-primary text-white">
+
+                  <mat-card-title class="text-center">
+                    Product List
+                  </mat-card-title>
+                </mat-card-header>
+
+                <mat-selection-list #shoes>
+                  <mat-list-option *ngFor="let product of products">
+                    {{product.name}}
+                  </mat-list-option>
+                </mat-selection-list>
+              </mat-card>
+            </div>
+
+            <div fxFlex="10" fxLayout="column" fxLayoutAlign="space-around center">
+
+
+              <button mat-raised-button> Add>> </button>
+              <button mat-raised-button>
+                Remove </button> </div>
+
+            <div fxFlex="25">
+              <mat-card>
+                <mat-card-header class="bg-primary text-white">
+
+                  <mat-card-title class="text-center">
+                    Products in Category
+                  </mat-card-title>
+                </mat-card-header>
+
+                <mat-selection-list #shoes>
+                  <mat-list-option *ngFor="let item of productCategory">
+                    {{item.description}}
+                  </mat-list-option>
+                </mat-selection-list>
+              </mat-card>
+            </div>
+          </div>
+        </form>
+
+        <div fxLayout="column" fxLayoutWrap="wrap" fxLayoutAlign="center end">
+
+          <button (click)="submitForm()" mat-raised-button [disabled]="!categoryForm.valid"> Submit </button>
+
+
+        </div>
+      </mat-card-content>
+
+    </mat-card>
+
+
+  </div>
+  <!-- column -->
+</div>
